@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <div  class="min-h-screen flex flex-col">
     <Header />
     
     <main class="container mx-auto px-4 py-8">
@@ -25,6 +25,8 @@
         @show-student-history="showStudentHistory"
       />
     </main>
+
+    <Footer />
 
     <AddEditContributionModal 
       :show="showAddContributionModal"
@@ -62,11 +64,13 @@ import StudentBalances from './components/StudentBalances.vue';
 import AddEditContributionModal from './components/AddEditContributionModal.vue';
 import DeleteConfirmationModal from './components/DeleteConfirmationModal.vue';
 import StudentHistoryModal from './components/StudentHistoryModal.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
+    Footer,
     FundSummary,
     StudentContributions,
     StudentBalances,
