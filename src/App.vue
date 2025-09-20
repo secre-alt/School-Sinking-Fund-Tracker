@@ -4,12 +4,12 @@
     
     <main class="container mx-auto px-4 py-8">
       <FundSummary 
-        :total-contributions="totalContributions"
-        :student-count="studentCount"
-        :fund-categories="fundCategories"
-        :contributions="contributions"
+        :total-contributions="35" 
+        :student-count="4" 
+        :fund-categories="['Building Maintenance', 'Equipment', 'School Events', 'Scholarships']" 
+        :contributions="[]" 
       />
-      
+            
       <StudentContributions 
         :contributions="contributions"
         :fund-categories="fundCategories"

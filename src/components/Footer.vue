@@ -11,8 +11,7 @@
     <footer class="bg-gray-900 text-gray-300 py-10">
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left">
-          
-          <!-- School Information -->
+                  
           <div>
             <h3 class="text-2xl font-bold mb-4 text-white">School Sinking Fund Tracker</h3>
             <p class="mb-3">A simple and effective system for managing student contributions.</p>
