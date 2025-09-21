@@ -10,10 +10,10 @@
                         </button>
                     </div>
 
-                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
-                        <div class="flex justify-between items-center">
+                    <div class="bg-gray-50 p-6 sm:p-4 rounded-lg mb-4">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 space-y-2 sm:space-y-0">
                             <div>
-                                <p class="text-sm text-gray-500">Total Contributions</p>
+                                <h3 class="text-base sm:text=lg font-semibold text-gray-900 text-center sm:text-left">Total Contributions</h3>
                                 <p class="text-xl font-bold text-indigo-800">₱{{ formatCurrency(studentBalances[student]) }}</p>
                             </div>
                             <div class="flex gap-2">
