@@ -1,5 +1,5 @@
 <template>
-  <!-- This component doesn't render anything, it just provides methods -->
+ 
 </template>
 
 <script>

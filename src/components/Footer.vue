@@ -33,6 +33,9 @@
               <a href="https://facebook.com/rencruxx" target="_blank" class="hover:text-indigo-400 transition">
                 <i data-feather="facebook"></i>
               </a>
+              <a href="https://www.instagram.com/secre_official" target="_blank" class="hover:text-indigo-400 transition">
+                <i data-feather="instagram"></i>
+              </a>
               <a href="https://github.com/secre-alt" target="_blank" class="hover:text-indigo-400 transition">
                 <i data-feather="github"></i>
               </a>
