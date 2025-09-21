@@ -5,9 +5,8 @@
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold text-gray-900">Contribution History for {{ student }}</h3>
-                        <button @click="$emit('close')" class="text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
-                            <i data-feather="arrow-left" class="w-4 h-4"></i>
-                            Back
+                         <button @click="$emit('close')" class="text-gray-400 hover:text-gray-500">
+                            <i data-feather="x"></i>
                         </button>
                     </div>
 

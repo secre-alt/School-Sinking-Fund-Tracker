@@ -1,8 +1,8 @@
 <template>
-  <div  class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col">
     <Header />
     
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8 flex-grow">
       <FundSummary 
         :total-contributions="totalContributions"
         :student-count="studentCount"
@@ -28,6 +28,11 @@
 
     <Footer />
 
+    <!-- Alert Components (they don't render UI but provide methods) -->
+    <DeleteAlert ref="deleteAlert" />
+    <SuccessAlert ref="successAlert" />
+
+    <!-- Modal components -->
     <AddEditContributionModal 
       :show="showAddContributionModal"
       :editing-contribution="editingContribution"
@@ -36,13 +41,6 @@
       @close="closeModal"
       @save="saveContribution"
       @add-category="addCategory"
-    />
-    
-    <DeleteConfirmationModal 
-      :show="showDeleteModal"
-      :contribution="currentContribution"
-      @close="closeModal"
-      @confirm="deleteContribution"
     />
     
     <StudentHistoryModal 
@@ -58,13 +56,14 @@
 <script>
 import { ref, computed, onMounted, watch } from 'vue';
 import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 import FundSummary from './components/FundSummary.vue';
 import StudentContributions from './components/StudentContributions.vue';
 import StudentBalances from './components/StudentBalances.vue';
 import AddEditContributionModal from './components/AddEditContributionModal.vue';
-import DeleteConfirmationModal from './components/DeleteConfirmationModal.vue';
 import StudentHistoryModal from './components/StudentHistoryModal.vue';
-import Footer from './components/Footer.vue';
+import DeleteAlert from './components/alerts/DeleteAlert.vue';
+import SuccessAlert from './components/alerts/SuccessAlert.vue';
 
 export default {
   name: 'App',
@@ -75,19 +74,21 @@ export default {
     StudentContributions,
     StudentBalances,
     AddEditContributionModal,
-    DeleteConfirmationModal,
-    StudentHistoryModal
+    StudentHistoryModal,
+    DeleteAlert,
+    SuccessAlert
   },
   setup() {
     // Data
     const contributions = ref(JSON.parse(localStorage.getItem('contributions')) || []);
-    const fundCategories = ref(JSON.parse(localStorage.getItem('fundCategories')) || ['Building Maintenance', 'Equipment', 'School Events', 'Scholarships']);
+    const fundCategories = ref(JSON.parse(localStorage.getItem('fundCategories')) || ['Building Maintenance', 'Equipment', 'School Events']);
     const showAddContributionModal = ref(false);
-    const showDeleteModal = ref(false);
     const showStudentHistoryModal = ref(false);
     const editingContribution = ref(false);
     const currentContribution = ref(null);
     const selectedStudent = ref('');
+    const deleteAlert = ref(null);
+    const successAlert = ref(null);
 
     // Computed properties
     const totalContributions = computed(() => {
@@ -118,6 +119,8 @@ export default {
         if (index !== -1) {
           contributions.value[index] = {...contributionData};
         }
+        // Show success message
+        successAlert.value.showSuccess('Updated!', 'Contribution has been updated successfully.');
       } else {
         // Add new contribution
         contributionData.id = Date.now().toString();
@@ -128,6 +131,8 @@ export default {
         contributionData.runningBalance = currentBalance + Number(contributionData.amount);
         
         contributions.value.push({...contributionData});
+        // Show success message
+        successAlert.value.showSuccess('Added!', 'Contribution has been added successfully.');
       }
 
       // Save to localStorage
@@ -153,15 +158,14 @@ export default {
       showAddContributionModal.value = true;
     };
 
-    const confirmDelete = (contribution) => {
-      currentContribution.value = contribution;
-      showDeleteModal.value = true;
-    };
-
-    const deleteContribution = () => {
-      contributions.value = contributions.value.filter(c => c.id !== currentContribution.value.id);
-      localStorage.setItem('contributions', JSON.stringify(contributions.value));
-      showDeleteModal.value = false;
+    const confirmDelete = async (contribution) => {
+      const result = await deleteAlert.value.confirmDelete(contribution);
+      
+      if (result.isConfirmed) {
+        contributions.value = contributions.value.filter(c => c.id !== contribution.id);
+        localStorage.setItem('contributions', JSON.stringify(contributions.value));
+        deleteAlert.value.showSuccess(`Contribution from ${contribution.studentName} has been deleted.`);
+      }
     };
 
     const showStudentHistory = (student) => {
@@ -171,7 +175,6 @@ export default {
 
     const closeModal = () => {
       showAddContributionModal.value = false;
-      showDeleteModal.value = false;
       showStudentHistoryModal.value = false;
       editingContribution.value = false;
       currentContribution.value = null;
@@ -184,28 +187,16 @@ export default {
       }
     };
 
-    // Lifecycle hooks
-    onMounted(() => {
-      // Initialize feather icons
-      if (typeof feather !== 'undefined') {
-        feather.replace();
-      }
-    });
-
-    // Watch for changes to contributions to update localStorage
-    watch(contributions, (newValue) => {
-      localStorage.setItem('contributions', JSON.stringify(newValue));
-    }, { deep: true });
-
     return {
       contributions,
       fundCategories,
       showAddContributionModal,
-      showDeleteModal,
       showStudentHistoryModal,
       editingContribution,
       currentContribution,
       selectedStudent,
+      deleteAlert,
+      successAlert,
       totalContributions,
       studentCount,
       studentBalances,
@@ -213,7 +204,6 @@ export default {
       addFunds,
       editContribution,
       confirmDelete,
-      deleteContribution,
       showStudentHistory,
       closeModal,
       addCategory
