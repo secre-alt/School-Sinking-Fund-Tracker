@@ -26,14 +26,6 @@
                 <i data-feather="mail" class="mr-3 w-5 h-5 text-indigo-400"></i>
                 <a href="mailto:rhendel145@gmail.com" class="hover:text-indigo-400 transition">rhendel145@gmail.com</a>
               </li>
-              <li class="flex items-center justify-center md:justify-start">
-                <i data-feather="phone" class="mr-3 w-5 h-5 text-indigo-400"></i>
-                <a href="tel:09275819739" class="hover:text-indigo-400 transition">0927-581-9739</a>
-              </li>
-              <li class="flex items-start justify-center md:justify-start">
-                <i data-feather="map-pin" class="mr-3 w-5 h-5 text-indigo-400 mt-1"></i>
-                <span>0161 Mahayay St.<br>Remedios, Danao, Bohol</span>
-              </li>
             </ul>
 
             <!-- Social Media -->
