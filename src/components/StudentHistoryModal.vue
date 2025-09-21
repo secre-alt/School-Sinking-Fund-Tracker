@@ -5,7 +5,7 @@
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold text-gray-900">Contribution History for {{ student }}</h3>
-                         <button @click="$emit('close')" class="text-gray-400 hover:text-gray-500">
+                         <button @click="$emit('close')" class="text-gray-400 hover:text-gray-500 self-end sm:self-auto">
                             <i data-feather="x"></i>
                         </button>
                     </div>
