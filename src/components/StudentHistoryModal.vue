@@ -5,7 +5,7 @@
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold text-gray-900">Contribution History for {{ student }}</h3>
-                         <button @click="$emit('close')" class="text-gray-400 hover:text-gray-500 self-end sm:self">
+                         <button @click="$emit('close')" class="text-gray-400 hover:text-gray-500 self-end sm:self-auto">
                             <i data-feather="x"></i>
                         </button>
                     </div>
@@ -31,7 +31,6 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -46,9 +45,6 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     ₱{{ formatCurrency(contribution.amount) }}
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                    ₱{{ formatCurrency(contribution.runningBalance) }}
                                 </td>
                             </tr>
                         </tbody>
@@ -98,14 +94,13 @@ export default {
                                 <th>Date</th>
                                 <th>Category</th>
                                 <th>Amount</th>
-                                <th>Balance</th>
                             </tr>
                             ${this.studentContributions.map(c => `
                                 <tr>
                                     <td>${this.formatDate(c.date)}</td>
                                     <td>${c.fundCategory}</td>
                                     <td>₱${this.formatCurrency(c.amount)}</td>
-                                    <td>₱${this.formatCurrency(c.runningBalance)}</td>
+                                    
                                 </tr>
                             `).join('')}
                         </table>

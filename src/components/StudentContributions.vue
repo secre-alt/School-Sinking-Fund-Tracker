@@ -4,9 +4,9 @@
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-semibold text-gray-800">Student Contributions</h2>
                 <div class="flex gap-2">
-                    <button @click="$emit('add-contribution')" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-indigo-700 transition">
-                        <i data-feather="plus"></i>
-                        Add Contribution
+                    <button @click="$emit('add-contribution')" class="bg-indigo-600 text-white px-3 py-2 rounded-lg font-medium flex items-center gap-1 md:gap-2 text-sm md:text-base hover:bg-indigo-700 transition">
+                        <i data-feather="plus" class="w-4 h-4 md:w-5 md:h-5"></i>
+                      <span class="hidden sm:inline">Add Contribution</span>
                     </button>
                 </div>
             </div>
