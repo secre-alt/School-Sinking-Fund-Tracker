@@ -28,7 +28,7 @@
             <!-- Search and Filter -->
             <div class="flex gap-2">
                 <div class="relative">
-                    <input v-model="searchQuery" placeholder="Search students..." class="pl-8 pr-2 py-2 border rounded">
+                    <input v-model="searchQuery" placeholder="Search..." class="pl-8 pr-2 py-2 border rounded">
                     <i data-feather="search" class="absolute left-2 top-2 text-gray-400 w-4"></i>
                 </div>
                 <select v-model="filterCategory" class="border rounded px-2 py-1">
