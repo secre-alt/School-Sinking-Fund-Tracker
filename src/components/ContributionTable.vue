@@ -57,10 +57,10 @@
                         ₱{{ formatCurrency(contribution.runningBalance) }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <button @click="$emit('add-funds', contribution)" class="text-green-600 hover:text-green-900 mr-3">
+                        <button @click="$emit('add-funds', contribution)" class="text-green-600 hover:text-green-900 mr-2">
                         <i data-feather="plus"></i>
                         </button>
-                        <button @click="$emit('edit-contribution', contribution)" class="text-indigo-600 hover:text-indigo-900 mr-3">
+                        <button @click="$emit('edit-contribution', contribution)" class="text-indigo-600 hover:text-indigo-900 mr-2">
                             <i data-feather="edit"></i>
                         </button>
                         <button @click="$emit('delete-contribution', contribution)" class="text-red-600 hover:text-red-900">
