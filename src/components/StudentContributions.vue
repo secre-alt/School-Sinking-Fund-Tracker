@@ -26,12 +26,15 @@
                 </div>
 
             <!-- Search and Filter -->
-            <div class="flex gap-2">
-                <div class="relative">
-                    <input v-model="searchQuery" placeholder="Search..." class="pl-8 pr-2 py-2 border rounded">
-                    <i data-feather="search" class="absolute left-2 top-2 text-gray-400 w-4"></i>
+            <div class="flex flex-col sm:flex-grow sm:justify-end">
+                <div class="relative flex-grow sm:max-w-xs">
+                    <input v-model="searchQuery" type="text" placeholder="Search students..." 
+                    class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500
+                    focus:border-indigo-500">
+                    <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400 w-4"></i>
                 </div>
-                <select v-model="filterCategory" class="border rounded px-2 py-1">
+                <select v-model="filterCategory" class="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500
+                focus:border-indigo-500">
                     <option value="">All Categories</option>
                     <option v-for="category in fundCategories" :value="category">{{ category }}</option>
                 </select>
