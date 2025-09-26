@@ -8,24 +8,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-10">
+    <footer class="bg-indigo-600 text-indigo-300 py-10">
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left">
                   
-          <div>
+          <!-- <div>
             <h3 class="text-2xl font-bold mb-4 text-white">School Sinking Fund Tracker</h3>
             <p class="mb-3">A simple and effective system for managing student contributions.</p>
             <p class="text-sm text-gray-400">© 2025 secre-alt. All rights reserved.</p>
-          </div>
+          </div> -->
 
           <!-- Contact Information -->
           <div>
-            <h4 class="text-xl font-semibold mb-4 text-white">Contact Us</h4>
+            <h4 class="text-xl font-semibold mb-4 text-white">Follow me</h4>
             <ul class="space-y-3">
-              <li class="flex items-center justify-center md:justify-start">
+              <!-- <li class="flex items-center justify-center md:justify-start">
                 <i data-feather="mail" class="mr-3 w-5 h-5 text-indigo-400"></i>
                 <a href="mailto:rhendel145@gmail.com" class="hover:text-indigo-400 transition">rhendel145@gmail.com</a>
-              </li>
+              </li> -->
             </ul>
 
             <!-- Social Media -->
@@ -33,13 +33,13 @@
               <a href="https://facebook.com/rencruxx" target="_blank" class="hover:text-indigo-400 transition">
                 <i data-feather="facebook"></i>
               </a>
-              <a href="https://www.instagram.com/secre_official" target="_blank" class="hover:text-indigo-400 transition">
+              <a href="https://www.instagram.com/secre_official" target="_blank" class="hover:text-indigo-500 transition">
                 <i data-feather="instagram"></i>
               </a>
-              <a href="https://github.com/secre-alt" target="_blank" class="hover:text-indigo-400 transition">
+              <a href="https://github.com/secre-alt" target="_blank" class="hover:text-indigo-500 transition">
                 <i data-feather="github"></i>
               </a>
-              <a href="https://linkedin.com/in/eldren-dela-cruz-8a0858335" target="_blank" class="hover:text-indigo-400 transition">
+              <a href="https://linkedin.com/in/eldren-dela-cruz-8a0858335" target="_blank" class="hover:text-indigo-500 transition">
                 <i data-feather="linkedin"></i>
               </a>
             </div>
@@ -47,8 +47,8 @@
         </div>
         
         <!-- Bottom Bar -->
-        <div class="border-t border-gray-700 mt-10 pt-6 text-sm text-center text-gray-500">
-          <p>Designed for educational purposes</p>
+        <div class="border-t border-indigo-300 mt-10 pt-6 text-sm text-center text-white-600">
+          <p>© 2025 secre-alt. All rights reserved.</p>
         </div>
       </div>
     </footer>
