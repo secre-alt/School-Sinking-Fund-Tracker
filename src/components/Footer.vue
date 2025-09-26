@@ -1,10 +1,10 @@
 <template>
   <!-- Full page wrapper -->
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col">
     
     <!-- Page content -->
-    <main class="flex-grow">
-      <!-- Your page content goes here -->
+    <main class="pb-10">
+      
     </main>
 
     <!-- Footer -->
