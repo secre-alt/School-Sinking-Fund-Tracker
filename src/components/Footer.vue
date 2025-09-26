@@ -8,7 +8,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-indigo-600 text-indigo-300 py-10">
+    <footer class="bg-indigo-600 text-indigo-300 py-4">
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left">
                   
@@ -29,8 +29,8 @@
             </ul>
 
             <!-- Social Media -->
-            <div class="flex justify-center md:justify-start space-x-5 mt-6">
-              <a href="https://facebook.com/rencruxx" target="_blank" class="hover:text-indigo-400 transition">
+            <div class="flex justify-center md:justify-start space-x-5 mt-4">
+              <a href="https://facebook.com/rencruxx" target="_blank" class="hover:text-indigo-500 transition">
                 <i data-feather="facebook"></i>
               </a>
               <a href="https://www.instagram.com/secre_official" target="_blank" class="hover:text-indigo-500 transition">
@@ -47,7 +47,7 @@
         </div>
         
         <!-- Bottom Bar -->
-        <div class="border-t border-indigo-300 mt-10 pt-6 text-sm text-center text-white-600">
+        <div class="border-t border-indigo-300 mt-4 pt-5 text-sm text-center text-white-600">
           <p>© 2025 secre-alt. All rights reserved.</p>
         </div>
       </div>
