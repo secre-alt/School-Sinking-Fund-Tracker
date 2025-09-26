@@ -6,8 +6,8 @@
                 <div class="flex gap-2">
                     <button @click="$emit('add-contribution')" class="bg-indigo-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium flex items-center 
                     gap-1 sm:gap-2 hover:bg-indigo-700 transition text-sm sm:text-base w-full xs:w-auto justify-center">
-                        <i data-feather="plus" class="w-3 h-3 sm:w-4 sm:h-4"></i>
-                        Add Contribution
+                        <i data-feather="plus" class="w-8 h-8 sm:w-7 sm:h-7"></i>
+                      <span class="hidden sm:inline">Add Contribution</span>
                     </button>
                 </div>
             </div>
