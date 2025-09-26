@@ -4,55 +4,58 @@
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-semibold text-gray-800">Student Contributions</h2>
                 <div class="flex gap-2">
-                    <button @click="$emit('add-contribution')" class="bg-indigo-600 text-white px-3 py-2 rounded-lg font-medium flex items-center gap-1 md:gap-2 text-sm md:text-base hover:bg-indigo-700 transition">
-                        <i data-feather="plus" class="w-5 h-5"></i>
-                      <span class="hidden sm:inline">Add Contribution</span>
+                    <button @click="$emit('add-contribution')" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-indigo-700 transition">
+                        <i data-feather="plus"></i>
+                        Add Contribution
                     </button>
                 </div>
             </div>
 
-             <!-- Controls -->
+            <!-- Controls Section -->
             <div class="mb-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                <!-- Show Entries -->
-                <div class="flex items-center gap-2 text-sm">
-                    <span>Show</span>
-                    <select v-model="perPage" class="border rounded px-2 py-1">
+                <!-- Show Entries Dropdown -->
+                <div class="flex items-center gap-2">
+                    <label for="show-entries" class="text-sm text-gray-600">Show</label>
+                    <select 
+                        v-model="perPage" 
+                        id="show-entries" 
+                        class="border rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        @change="resetToFirstPage"
+                    >
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
                         <option value="-1">All</option>
                     </select>
-                    <span>entries</span>
+                    <span class="text-sm text-gray-600">entries</span>
                 </div>
 
-            <!-- Search and Filter -->
-            <div class="flex flex-col sm:flex-grow sm:justify-end">
-                <div class="relative flex-grow sm:max-w-xs">
-                    <input v-model="searchQuery" type="text" placeholder="Search students..." 
-                    class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500
-                    focus:border-indigo-500">
-                    <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400 w-4"></i>
+                <!-- Search and Filter -->
+                <div class="flex flex-col sm:flex-row gap-4 flex-grow sm:justify-end">
+                    <div class="relative flex-grow sm:max-w-xs">
+                        <input v-model="searchQuery" type="text" placeholder="Search students..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400"></i>
+                    </div>
+                    <select v-model="filterCategory" class="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">All Categories</option>
+                        <option v-for="category in fundCategories" :value="category">{{ category }}</option>
+                    </select>
                 </div>
-                <select v-model="filterCategory" class="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500
-                focus:border-indigo-500">
-                    <option value="">All Categories</option>
-                    <option v-for="category in fundCategories" :value="category">{{ category }}</option>
-                </select>
             </div>
-        </div>
-                
-        <!-- Table Info-->
-         <div class="mb-2 text-sm text-gray-600">
-            Showing {{ paginationStart }} to {{ paginationEnd }} of 
-            {{ filteredContributions.length }} entries
-            <span v-if="filteredContributions.length != contributions.length">
-                (filtered from {{ contributions.length }} total entries)
-            </span>
-         </div>
 
-               <ContributionTable 
+            <!-- Table Info -->
+            <div class="mb-4 text-sm text-gray-600">
+                Showing {{ paginationStart }} to {{ paginationEnd }} of {{ filteredContributions.length }} entries
+                <span v-if="filteredContributions.length !== contributions.length">
+                    (filtered from {{ contributions.length }} total entries)
+                </span>
+            </div>
+
+            <ContributionTable 
                 :contributions="paginatedContributions"
-                :style="fundCategories"        
+                :fund-categories="fundCategories"
                 :search-query="searchQuery"
                 :filter-category="filterCategory"
                 :sort-column="sortColumn"
@@ -64,35 +67,55 @@
                 @update:sortDirection="sortDirection = $event"
             />
 
-   
-         <!-- Previous button -->
-         <div class="flex gap-2">
-            <button @click="previousPage"
-            :disabled="currentPage === 1"
-            class="px-3 py-1 border rounded-lg text-sm font-medium transition"
-            :class="currentPage === 1 ? 'text-gray-400 cursor-not-allowed'
-            : 'text-gray-700 hover:bg-gray-50'">Previous</button>
-         </div>
-        
-         <!-- Page Numbers -->
-         <div class="flex gap-1">
-            <button v-for="page in visiblePages"
-            :key="page"
-            @click="goToPage(page)" class="px-3 border rounded-lg
-            text-sm font-medium transition min-w-[40px]"
-            :class="page === currentPage ? 'bg-indigo-600 text-white border-indigo-600' 
-            : 'text-gray-700 hover:bg-gray-50'">{{ page }}</button>
+            <!-- Pagination Controls -->
+            <div class="flex flex-col sm:flex-row items-center justify-between mt-4 gap-4">
+                <div class="text-sm text-gray-600">
+                    Showing {{ paginationStart }} to {{ paginationEnd }} of {{ filteredContributions.length }} entries
+                </div>
+                
+                <div class="flex gap-2">
+                    <!-- Previous Button -->
+                    <button 
+                        @click="previousPage" 
+                        :disabled="currentPage === 1"
+                        class="px-3 py-2 border rounded-lg text-sm font-medium transition"
+                        :class="currentPage === 1 
+                            ? 'text-gray-400 cursor-not-allowed' 
+                            : 'text-gray-700 hover:bg-gray-50'"
+                    >
+                        Previous
+                    </button>
 
-            <span v-if="showEllipsis" class="px-2 py-2 text-gray-500">...</span>
-         </div>
+                    <!-- Page Numbers -->
+                    <div class="flex gap-1">
+                        <button 
+                            v-for="page in visiblePages" 
+                            :key="page"
+                            @click="goToPage(page)"
+                            class="px-3 py-2 border rounded-lg text-sm font-medium transition min-w-[40px]"
+                            :class="page === currentPage 
+                                ? 'bg-indigo-600 text-white border-indigo-600' 
+                                : 'text-gray-700 hover:bg-gray-50'"
+                        >
+                            {{ page }}
+                        </button>
+                        
+                        <span v-if="showEllipsis" class="px-2 py-2 text-gray-500">...</span>
+                    </div>
 
-         <!-- Next Button-->>
-         <button @click="nextPage"
-         :disabled="currentPage === totalPages"
-         class="px-3 py-2 border rounded-lg text-sm font-medium transition"
-         :class="currentPage === totalPages 
-         ? 'text-gray-400 cursor-not-allowed'
-         : 'text-gray-700 hover:bg-gray-50'">Next</button>
+                    <!-- Next Button -->
+                    <button 
+                        @click="nextPage" 
+                        :disabled="currentPage === totalPages"
+                        class="px-3 py-2 border rounded-lg text-sm font-medium transition"
+                        :class="currentPage === totalPages 
+                            ? 'text-gray-400 cursor-not-allowed' 
+                            : 'text-gray-700 hover:bg-gray-50'"
+                    >
+                        Next
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -114,23 +137,27 @@ export default {
             filterCategory: '',
             sortColumn: 'date',
             sortDirection: 'desc',
-            perPage: 5,
+            perPage: 10,
             currentPage: 1
         };
     },
     computed: {
         filteredContributions() {
             let result = [...this.contributions];
-
+            
+            // Filter by search query
             if (this.searchQuery) {
-                const query = this.searchQuery.toLocaleLowerCase();
-                result = result.filter(c => c.studentName.toLocaleLowerCase().includes(query));
+                const query = this.searchQuery.toLowerCase();
+                result = result.filter(c => 
+                    c.studentName.toLowerCase().includes(query)
+                );
             }
-         
-            // filter by category
+            
+            // Filter by category
             if (this.filterCategory) {
                 result = result.filter(c => c.fundCategory === this.filterCategory);
             }
+            
             // Sort
             if (this.sortColumn) {
                 result.sort((a, b) => {
@@ -141,60 +168,61 @@ export default {
                         return this.sortDirection === 'asc' ? 1 : -1;
                     }
                     return 0;
-                 });             
+                });
             }
-
+            
             return result;
         },
+        
         totalPages() {
-            if (this.perPage === '-1') return 1;
+            if (this.perPage === -1) return 1;
             return Math.ceil(this.filteredContributions.length / this.perPage);
-
         },
+        
         paginatedContributions() {
-            if (this.perPage === '-1') {
+            if (this.perPage === -1) {
                 return this.filteredContributions;
             }
-
+            
             const startIndex = (this.currentPage - 1) * this.perPage;
             const endIndex = startIndex + this.perPage;
             return this.filteredContributions.slice(startIndex, endIndex);
         },
-
+        
         paginationStart() {
             if (this.filteredContributions.length === 0) return 0;
-            if (this.perPage === '-1') return 1;
-            return (this.currentPage -1) * this.perPage + 1;
+            if (this.perPage === -1) return 1;
+            return (this.currentPage - 1) * this.perPage + 1;
         },
-
+        
         paginationEnd() {
             if (this.filteredContributions.length === 0) return 0;
-            if (this.perPage === '-1') return this.filteredContributions.length;
+            if (this.perPage === -1) return this.filteredContributions.length;
             return Math.min(this.currentPage * this.perPage, this.filteredContributions.length);
         },
-
+        
         visiblePages() {
             const pages = [];
             const maxVisiblePages = 5;
-
+            
             let startPage = Math.max(1, this.currentPage - Math.floor(maxVisiblePages / 2));
             let endPage = Math.min(this.totalPages, startPage + maxVisiblePages - 1);
-
-            // adjust start page if we're near the end
-            if (endPage - startPage +1 < maxVisiblePages) {
+            
+            // Adjust start page if we're near the end
+            if (endPage - startPage + 1 < maxVisiblePages) {
                 startPage = Math.max(1, endPage - maxVisiblePages + 1);
             }
-
+            
             for (let i = startPage; i <= endPage; i++) {
                 pages.push(i);
             }
-
+            
             return pages;
         },
-
+        
         showEllipsis() {
-            return this.totalPages > this.visiblePages.length &&
-            Math.max(...this.visiblePages) < this.totalPages;
+            return this.totalPages > this.visiblePages.length && 
+                   Math.max(...this.visiblePages) < this.totalPages;
         }
     },
     watch: {
@@ -212,23 +240,22 @@ export default {
         resetToFirstPage() {
             this.currentPage = 1;
         },
-
+        
         previousPage() {
             if (this.currentPage > 1) {
                 this.currentPage--;
             }
         },
-
+        
         nextPage() {
             if (this.currentPage < this.totalPages) {
                 this.currentPage++;
             }
         },
-
+        
         goToPage(page) {
             this.currentPage = page;
         }
     }
-
 }
 </script>
