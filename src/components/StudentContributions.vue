@@ -111,7 +111,7 @@ export default {
             filterCategory: '',
             sortColumn: 'date',
             sortDirection: 'desc',
-            perPage: 10,
+            perPage: 5,
             currentPage: 1
         };
     },

@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                <tr v-for="contribution in filteredContributions" :key="contribution.id" class="hover:bg-gray-50">
+                <tr v-for="contribution in contributions" :key="contribution.id" class="hover:bg-gray-50">
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="flex items-center">
                             <div class="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-full flex items-center justify-center">
@@ -68,7 +68,7 @@
                         </button>
                     </td>
                 </tr>
-                <tr v-if="filteredContributions.length === 0">
+                <tr v-if="contributions.length === 0">
                     <td colspan="6" class="px-6 py-4 text-center text-gray-500">
                         No contributions found
                     </td>
@@ -107,39 +107,6 @@ export default {
                 this.$emit('update:sortDirection', 'asc');
             }
         }
-    },
-    computed: {
-        filteredContributions() {
-            let result = [...this.contributions];
-            
-            // Filter by search query
-            if (this.searchQuery) {
-                const query = this.searchQuery.toLowerCase();
-                result = result.filter(c => 
-                    c.studentName.toLowerCase().includes(query)
-                );
-            }
-            
-            // Filter by category
-            if (this.filterCategory) {
-                result = result.filter(c => c.fundCategory === this.filterCategory);
-            }
-            
-            // Sort
-            if (this.sortColumn) {
-                result.sort((a, b) => {
-                    if (a[this.sortColumn] < b[this.sortColumn]) {
-                        return this.sortDirection === 'asc' ? -1 : 1;
-                    }
-                    if (a[this.sortColumn] > b[this.sortColumn]) {
-                        return this.sortDirection === 'asc' ? 1 : -1;
-                    }
-                    return 0;
-                });
-            }
-            
-            return result;
-        }
-    }
+    } 
 }
 </script>
