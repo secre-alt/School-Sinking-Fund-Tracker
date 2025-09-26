@@ -46,13 +46,13 @@
                 </div>
             </div>
 
-            <!-- Table Info -->
+            <!-- Table Info
             <div class="mb-4 text-sm text-gray-600">
                 Showing {{ paginationStart }} to {{ paginationEnd }} of {{ filteredContributions.length }} entries
                 <span v-if="filteredContributions.length !== contributions.length">
                     (filtered from {{ contributions.length }} total entries)
                 </span>
-            </div>
+            </div> -->
 
             <ContributionTable 
                 :contributions="paginatedContributions"
