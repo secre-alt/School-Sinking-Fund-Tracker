@@ -11,7 +11,7 @@ export default defineConfig({
     vueDevTools(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png', 'icons/S-192x192.png'],
       manifest: {
         name: 'School Sinking Fund Tracker',
         short_name: 'FundTracker',
@@ -23,7 +23,7 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: 'icons/S-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
