@@ -64,6 +64,7 @@ import AddEditContributionModal from './components/AddEditContributionModal.vue'
 import StudentHistoryModal from './components/StudentHistoryModal.vue';
 import DeleteAlert from './components/alerts/DeleteAlert.vue';
 import SuccessAlert from './components/alerts/SuccessAlert.vue';
+// import { PencilSquareIcon, TrashIcon, PlusIcon } from '@heroicons/vue/24/outline'
 
 export default {
   name: 'App',

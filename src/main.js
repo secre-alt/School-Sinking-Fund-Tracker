@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-
+import feather from 'feather-icons'
 // Import global CSS
 import './assets/main.css';
 
