@@ -1,5 +1,5 @@
 <template>
-   <header class="bg-indigo-700 bg-gradient-to-b from-[#5a5bd8] to-[#d993ff99] text-white shadow-lg">
+   <header class="bg-indigo-600 text-white shadow-lg">
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center space-x-3">
 
