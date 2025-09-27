@@ -8,7 +8,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-indigo-600 bg-gradient-to-b from-[#5a5bd8] to-[#d993ff] text-indigo-300 py-4">
+    <footer class="bg-indigo-600 bg-gradient-to-b from-[#5a5bd8] to-[#d993ff95] text-indigo-300 py-4">
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left">
                   
@@ -47,7 +47,7 @@
         </div>
         
         <!-- Bottom Bar -->
-        <div class="border-t border-indigo-300 mt-4 pt-5 text-sm text-center text-indigo-100">
+        <div class="border-t border-indigo-100 mt-4 pt-5 text-sm text-center text-indigo-100">
           <p>© 2025 secre-alt. All rights reserved.</p>
         </div>
       </div>
