@@ -4,7 +4,7 @@
   "description": "Track school sinking fund contributions easily.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#5a5bd8",
+  "background_color": "#d993ff",
   "theme_color": "#5a5bd8",
   "icons": [
     {
