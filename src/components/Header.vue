@@ -3,17 +3,13 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center space-x-3">
 
-                <!-- Logo Button -->
-                <button 
-                @click="toggleDarkMode"
-                class="focus:outline-none"
-                >
+              <!-- App Logo -->
                 <img 
                     src="/icons/S-192x192.png" 
                     alt="App Logo" 
                     class="w-14 h-14 rounded-lg border-t-2 border-indigo-300 shadow-md transition cursor-pointer"
                 />
-                </button>
+              
 
                 <div>
                     <h1 class="text-[30px] font-bold">Fund Tracker</h1>
@@ -29,7 +25,6 @@ export default {
   name: "Header",
   methods: {
     toggleDarkMode() {
-        console.log("Dark mode toggle clicked ✅"); // Debug
       document.documentElement.classList.toggle("dark")
       // Optional: save preference
       if (document.documentElement.classList.contains("dark")) {
