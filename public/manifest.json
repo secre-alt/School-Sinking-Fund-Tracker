@@ -1,6 +1,6 @@
 {
   "name": "School Sinking Fund Tracker",
-  "short_name": "Fund Tracker",
+  "short_name": "SFund Tracker",
   "description": "Track school sinking fund contributions easily.",
   "start_url": ".",
   "display": "standalone",
