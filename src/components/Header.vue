@@ -7,13 +7,13 @@
                 <img 
                     src="/icons/S-192x192.png" 
                     alt="App Logo" 
-                    class="w-14 h-14 rounded-lg border-t-2 border-indigo-300 shadow-md transition cursor-pointer"
+                    class="w-10 h-10 rounded-lg border-t-2 border-indigo-300 shadow-md transition cursor-pointer"
                 />
               
 
                 <div>
-                    <h1 class="text-[30px] font-bold">Fund Tracker</h1>
-                    <p class="text-[15px] text-indigo-100">Track student Contributions</p>
+                    <h1 class="text-[20px] font-bold">Fund Tracker</h1>
+                    <p class="text-[12px] text-indigo-100">Track student Contributions</p>
                 </div>
             </div>
         </div>

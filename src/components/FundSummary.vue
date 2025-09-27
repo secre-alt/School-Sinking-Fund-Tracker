@@ -4,15 +4,15 @@
       <h2 class="text-xl font-semibold mb-4 text-gray-800">Fund Summary</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <div class="bg-indigo-50 p-4 rounded-lg">
+        <div class="bg-indigo-100 p-4 rounded-lg">
           <p class="text-sm text-indigo-600 font-medium">Total Contributions</p>
-          <p class="text-2xl font-bold text-indigo-800">₱{{ formatCurrency(totalContributions) }}</p>
+          <p class="text-2xl font-bold text-indigo-800">₱ {{ formatCurrency(totalContributions) }}</p>
         </div>
-        <div class="bg-green-50 p-4 rounded-lg">
+        <div class="bg-green-100 p-4 rounded-lg">
           <p class="text-sm text-green-600 font-medium">Total Students</p>
           <p class="text-2xl font-bold text-green-800">{{ studentCount }}</p>
         </div>
-        <div class="bg-purple-50 p-4 rounded-lg">
+        <div class="bg-purple-100 p-4 rounded-lg">
           <p class="text-sm text-purple-600 font-medium">Fund Categories</p>
           <p class="text-2xl font-bold text-purple-800">{{ fundCategories.length }}</p>
         </div>
