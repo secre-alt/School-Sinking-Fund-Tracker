@@ -4,9 +4,13 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  darkMode: "class", // ✅ must be here, not outside
+  darkMode: "class", 
   theme: {
-    extend: {},
-  },
+    extend: {
+      fontFamily: {
+      sans: ['Poppins', 'sans-serif'],
+     },
+   },
+ },
   plugins: [],
 }

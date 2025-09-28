@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="mb-6">
+      <div class="w-65 h-64 mx-auto mb-6">
         <canvas id="fundChart" ref="chartCanvas" class="w-full h-64"></canvas>
       </div>
     </div>

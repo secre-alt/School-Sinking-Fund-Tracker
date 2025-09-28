@@ -2,7 +2,13 @@ const CACHE_NAME = "fund-tracker-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/manifest.json"
+  "/manifest.json",
+  "/assets/main.css",
+  "/assets/fonts.css",
+  "/fonts/Poppins-Regular.ttf",
+  "/fonts/Poppins-Medium.ttf",
+  "/fonts/Poppins-SemiBold.ttf",
+  "/fonts/Poppins-Bold.ttf",
 ];
 
 // Install SW and cache files
