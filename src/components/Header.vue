@@ -1,7 +1,7 @@
 <template>
    <header class="bg-indigo-600 text-white shadow-lg">
         <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-1">
 
               <!-- App Logo -->
                 <img 
@@ -13,8 +13,11 @@
 
                 <div>
                     <h1 class="text-[20px] font-bold">Fund Tracker</h1>
-                    <p class="text-[12px] text-indigo-100">Track student Contributions</p>
                 </div>
+
+                <!-- <div class="flex ">
+                   <p class="text-[15px] text-indigo-100">Track student Contributions</p>
+                </div> -->
             </div>
         </div>
    </header>
