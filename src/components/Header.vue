@@ -7,7 +7,7 @@
                 <img 
                     src="/icons/S-192x192.png" 
                     alt="App Logo" 
-                    class="w-10 h-10 rounded-lg border-t-1 border-indigo-300 shadow-md transition cursor-pointer"
+                    class="w-10 h-10 rounded-lg border-t-2 border-indigo-300 shadow-md transition cursor-pointer"
                 />
               
 
