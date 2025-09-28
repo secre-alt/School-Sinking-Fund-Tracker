@@ -17,5 +17,5 @@ export const getCategoryColor = (category) => {
         'School Events': 'bg-purple-100 text-purple-800',
         'Scholarships': 'bg-yellow-100 text-yellow-800'
     };
-    return colors[category] || 'bg-gray-100 text-gray-800';
+    return colors[category] || 'bg-indigo-100 text-indigo-800';
 };
