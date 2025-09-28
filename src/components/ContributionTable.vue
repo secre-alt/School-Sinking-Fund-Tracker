@@ -51,10 +51,10 @@
                         {{ formatDate(contribution.date) }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        ₱{{ formatCurrency(contribution.amount) }}
+                        ₱ {{ formatCurrency(contribution.amount) }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        ₱{{ formatCurrency(contribution.runningBalance) }}
+                        ₱ {{ formatCurrency(contribution.runningBalance) }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <button @click="$emit('add-funds', contribution)" class="text-green-600 hover:text-green-900 mr-2 inline">

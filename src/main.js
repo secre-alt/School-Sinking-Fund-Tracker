@@ -5,6 +5,7 @@ import feather from 'feather-icons'
 // Global CSS
 import './assets/main.css'
 import './assets/fonts.css'
+import "tailwindcss";
 
 // JS Libraries
 import Chart from 'chart.js/auto'

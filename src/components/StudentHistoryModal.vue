@@ -14,7 +14,7 @@
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-sm text-gray-500">Total Contributions</p>
-                                <p class="text-xl font-bold text-indigo-800">₱{{ formatCurrency(studentBalances[student]) }}</p>
+                                <p class="text-xl font-bold text-indigo-800">₱ {{ formatCurrency(studentBalances[student]) }}</p>
                             </div>
                             <div class="flex gap-2">
                                 <button @click="printStudentHistory" class="text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
@@ -44,7 +44,7 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ₱{{ formatCurrency(contribution.amount) }}
+                                    ₱ {{ formatCurrency(contribution.amount) }}
                                 </td>
                             </tr>
                         </tbody>
