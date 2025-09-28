@@ -27,7 +27,7 @@
                             <i data-feather="chevron-up" class="w-4 h-4" v-if="sortColumn === 'runningBalance' && sortDirection === 'asc'"></i>
                         </div>
                     </th>
-                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    <th scope="col" class="px-6 py-3 align-middle text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -56,7 +56,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         ₱ {{ formatCurrency(contribution.runningBalance) }}
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <td class="px-6 py-4 whitespace-nowrap align-middle text-center text-sm font-medium">
                         <button @click="$emit('add-funds', contribution)" class="text-green-600 hover:text-green-900 mr-2">
                         <i data-feather="plus"></i>
                         </button>
