@@ -5,11 +5,10 @@ const urlsToCache = [
   "/manifest.json",
   "/assets/main.css",
   "/assets/fonts.css",
-  '/lib/tailwind.js',
   "/fonts/Poppins-Regular.ttf",
   "/fonts/Poppins-Medium.ttf",
   "/fonts/Poppins-SemiBold.ttf",
-  "/fonts/Poppins-Bold.ttf",
+  "/fonts/Poppins-Bold.ttf"
 ];
 
 // Install SW and cache files

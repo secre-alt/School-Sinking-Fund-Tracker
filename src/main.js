@@ -5,13 +5,12 @@ import feather from 'feather-icons'
 // Global CSS
 import './assets/main.css'
 import './assets/fonts.css'
-import "tailwindcss";
 
 // JS Libraries
 import Chart from 'chart.js/auto'
 import Swal from 'sweetalert2'
 
-// Make them available globally if needed
+// Make them available globally
 window.Chart = Chart
 window.Swal = Swal
 
