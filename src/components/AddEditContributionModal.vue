@@ -42,12 +42,12 @@
                             <input v-model="newContribution.amount" type="number" id="amount" placeholder="Enter amount" min="1" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required>
                         </div>
 
-                        <div class="flex justify-end gap-3 pt-4 border-t">
-                            <button type="button" @click="closeModal" class="px-4 py-2 bg-indigo-100 border border-indigo-700 rounded-lg text-gray-700 hover:bg-indigo-50">
-                                Cancel
-                            </button>
+                        <div class="flex justify-center gap-3 pt-4 border-t">          
                             <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
                                 {{ editingContribution ? 'Update' : 'Save' }}
+                            </button>
+                            <button type="button" @click="closeModal" class="px-4 py-2 bg-indigo-100 border border-indigo-700 rounded-lg text-gray-700 hover:bg-indigo-50">
+                                Cancel
                             </button>
                         </div>
                     </form>
