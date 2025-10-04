@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="w-65 h-65 mx-auto mb-6">
+      <div class="mx-auto mb-6 w-65 h-65 sm:w-[25rem] sm:h-[25rem] lg:w-[30rem] lg:h-[30rem]">
         <canvas id="fundChart" ref="chartCanvas" class="w-full h-64"></canvas>
       </div>
     </div>
