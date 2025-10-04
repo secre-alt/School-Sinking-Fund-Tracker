@@ -30,13 +30,13 @@
     <!-- Info Modal -->
     <div
       v-if="showInfo"
-      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 px-4 sm:px-6"
     >
-      <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
-        <h3 class="text-lg font-semibold text-indigo-700 mb-3">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-indigo-700 mb-3">
           About Fund Tracker
         </h3>
-        <p class="text-gray-500 mb-4">
+        <p class="text-sm sm:text-base text-gray-700 mb-4">
           This application helps you track student contributions, monitor
           balances, and maintain transparent financial records.
         </p>
