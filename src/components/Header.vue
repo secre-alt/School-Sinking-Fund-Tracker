@@ -32,22 +32,24 @@
       v-if="showInfo"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 px-4 sm:px-5"
     >
-      <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
-        <h3 class="text-lg font-semibold text-indigo-700 mb-3">
+      <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full relative">        
+        <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-semibold text-indigo-700">
           About Fund Tracker
         </h3>
-        <p class="text-gray-500 mb-4">
+        <button
+          @click="showInfo = false"
+          class="text-indigo-400 hover:text-indigo-500"
+        >
+          <i data-feather="x"></i>
+        </button>
+      </div>
+            
+        <p class="text-gray-600 mb-4">
           This application helps you track student contributions, monitor
           balances, and maintain transparent financial records.
         </p>
-        <div class="flex justify-end">
-          <button
-            @click="showInfo = false"
-            class="px-4 py-2 border border-indigo-500 border-solid text-indigo-600 rounded-lg hover:bg-indigo-100"
-          >
-            Close
-          </button>
-        </div>
+       
       </div>
     </div>
   </header>

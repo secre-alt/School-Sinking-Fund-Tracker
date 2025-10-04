@@ -1,24 +1,22 @@
 <template>
-  <!-- You don’t need a custom modal anymore -->
+ 
 </template>
 
 <script>
 export default {
   name: 'DeleteAlert',
   methods: {
-    async confirmDelete(contribution) {
-      const result = await Swal.fire({
+    confirmDelete(contribution) {
+      return Swal.fire({
         title: 'Are you sure?',
         text: `Delete contribution from ${contribution.studentName}?`,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#6b7280',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!',
         cancelButtonText: 'Cancel'
       });
-
-      return result.isConfirmed; // true if confirmed, false if cancelled
     },
     
     showSuccess(message) {
