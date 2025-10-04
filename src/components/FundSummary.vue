@@ -4,17 +4,38 @@
       <h2 class="text-xl font-semibold mb-4 text-gray-800">Fund Summary</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <div class="bg-indigo-100 p-4 rounded-lg">
+        
+        <!-- Total Contributions -->
+        <div class="bg-indigo-100 p-4 rounded-lg flex items-center gap-4">
+         <div class="bg-indigo-200 p-3 rounded-full">
+          <i data-feather="dollar-sign" class="text-indigo-600 w-6 h-6"></i>
+         </div>
+          <div>
           <p class="text-sm text-indigo-600 font-medium">Total Contributions</p>
           <p class="text-2xl font-bold text-indigo-800">₱ {{ formatCurrency(totalContributions) }}</p>
         </div>
-        <div class="bg-green-100 p-4 rounded-lg">
-          <p class="text-sm text-green-600 font-medium">Total Students</p>
-          <p class="text-2xl font-bold text-green-800">{{ studentCount }}</p>
-        </div>
-        <div class="bg-purple-100 p-4 rounded-lg">
-          <p class="text-sm text-purple-600 font-medium">Fund Categories</p>
-          <p class="text-2xl font-bold text-purple-800">{{ fundCategories.length }}</p>
+      </div>
+
+        <!-- Total Students -->
+        <div class="bg-green-100 p-4 rounded-lg flex items-center gap-4">
+           <div class="bg-green-200 p-3 rounded-full">
+              <i data-feather="users" class="text-green-600 w-6 h-6"></i>
+            </div>
+              <div>
+                <p class="text-sm text-green-600 font-medium">Total Students</p>
+                <p class="text-2xl font-bold text-green-800">{{ studentCount }}</p>
+              </div>
+            </div>
+
+         <!-- Fund Categories -->
+        <div class="bg-purple-100 p-4 rounded-lg flex items-center gap-4">
+          <div class="bg-purple-200 p-3 rounded-full">
+            <i data-feather="layers" class="text-purple-600 w-6 h-6"></i>
+          </div>
+         <div>
+           <p class="text-sm text-purple-600 font-medium">Fund Categories</p>
+           <p class="text-2xl font-bold text-purple-800">{{ fundCategories.length }}</p>
+         </div>
         </div>
       </div>
 
