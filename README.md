@@ -63,10 +63,6 @@ It provides real-time tracking, reporting, and management tools for school admin
 
 ## 🚀 Quick Start  
 
-### Prerequisites  
-- Node.js (v14 or higher)  
-- npm or yarn package manager  
-
 ### Installation  
 ```bash
 # Clone the repository
