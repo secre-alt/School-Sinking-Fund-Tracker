@@ -2,16 +2,20 @@
   publish = "dist"
   command = "npm run build"
 
+# Do not redirect sitemap or robots
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/robots.txt"
   to = "/robots.txt"
   status = 200
+  force = true
 
+# Redirect all other routes to index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
