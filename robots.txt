@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sfund-tracker.netlify.app//sitemap.xml
+Sitemap: https://sfund-tracker.netlify.app/sitemap.xml
