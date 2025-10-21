@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://school-sinking-fund-tracker.netlify.app/sitemap.xml
